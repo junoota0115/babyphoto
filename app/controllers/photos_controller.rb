@@ -8,7 +8,22 @@ class PhotosController < ApplicationController
   end
   
 def create
+  @photo = Photo.new
   Photo.create(photo_params)
+  if @photo.save
+    redirect_to :root
+  else render :new
+end
+end
+
+
+def destroy
+  photo = Photo.find(params[:id])
+if    photo.destroy
+    redirect_to root_path
+  else
+    render :index
+  end 
 end
 
 private

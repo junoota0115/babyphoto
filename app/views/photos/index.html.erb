@@ -1,6 +1,12 @@
 <div class="app-title">baby photo</div>
 
 <% @photos.each do|p|%>
+   <div class="name">
+    <%= p.name %>
+   </div>
+      <%= p.text %>
+      <%=p.image%>
+
 <% end %>
 
 <%=link_to "投稿", new_photo_path %>
