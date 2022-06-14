@@ -1,9 +1,18 @@
 <div class="contents row">
+
 <div class="photomain">
-<%= form_with(model: @photo,local: true) do |form| %>
-<%= form.text_field :name,placeholder: "Nickname" %>
-<%= form.text_field :image,placeholder: "Image Url" %>
+<%= form_with model: @photo,local: true do |form| %>
+<div class="photomain1">
+<%= form.text_field :name,placeholder: "グッズ名" %>
+</div>
+
+  <div class="setnumber_id">個
+    <%= form.collection_select(:setnumber_id, Setnumber.all, :id, :name, {}, {class:"setnumber_id"}) %>個
+  </div>
+
+<div class="photomain2">
 <%= form.text_area :text,placeholder: "text",rows:"10" %>
+</div>
 <%= form.submit "SEND"%>
 <% end %>
 </div>

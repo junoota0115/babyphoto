@@ -4,6 +4,7 @@ class CreatePhotos < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :text
       t.text :image
+      t.string :setnumber_id,   null: false 
 
       t.timestamps
     end

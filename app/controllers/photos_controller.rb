@@ -28,7 +28,7 @@ end
 
 private
 def photo_params
-  params.require(:photo).permit(:name,:text,:content)
+  params.require(:photo).permit(:name,:text,:content,:setnumber_id)
 end
 
 
